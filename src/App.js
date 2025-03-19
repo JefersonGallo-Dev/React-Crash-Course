@@ -3,7 +3,7 @@
 // import React from "react"
 // class App extends React.Component{
 //   render() {
-//     return <h1>Hello from class</h1>
+//     return <h1>Hello from s class</h1>
 //   }
 // }
 // export default App;
@@ -13,34 +13,49 @@
 // Using functions //
 import Header from "./components/Header";
 import Tasks from "./components/Tasks";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AddTask from "./components/AddTask";
 
 
 function App() {
 
   const [showAddTask, setShowAddTask] = useState(true)
-
   const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      text: "Doctors Appointment",
-      day: "Monday",
-      reminder: true,
-    },
-    {
-      id: 2,
-      text: "U Meeting",
-      day: "Friday",
-      reminder: true,
-    },
-    {
-      id: 3,
-      text: "Exam",
-      day: "Sunday",
-      reminder: true,
-    }
+    // {
+    //   id: 1,
+    //   text: "Doctors Appointment",
+    //   day: "Monday",
+    //   reminder: true,
+    // },
+    // {
+    //   id: 2,
+    //   text: "U Meeting",
+    //   day: "Friday",
+    //   reminder: true,
+    // },
+    // {
+    //   id: 3,
+    //   text: "Exam",
+    //   day: "Sunday",
+    //   reminder: true,
+    // }
   ])
+
+  useEffect(() => {
+    const getTasks = async () => {
+      const taskFromServer = await fetchTasks();
+      setTasks(taskFromServer);
+    }
+    getTasks(); 
+  }, []);
+
+  // Fetch tasks //
+  const fetchTasks = async () => {
+    const res = await fetch("http://localhost:5000/tasks");
+    const data = await res.json();
+    console.log(data);
+    return data
+  };
 
   // Delete a task //
   const deleteTask = (id) => {
