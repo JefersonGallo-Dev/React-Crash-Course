@@ -15,6 +15,7 @@ const Header = ({title, onAdd, showAdd}) => {
   )
 };
 
+// CSS in JS
 // const headingStyle = {
 //     color:"red", 
 //     backgroundColor:"black",
