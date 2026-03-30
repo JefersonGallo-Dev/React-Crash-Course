@@ -1,16 +1,28 @@
 {
   "tasks": [
     {
-      "id": "477d",
-      "text": "Update EvalApp",
-      "day": "Thu 24",
-      "reminder": true
-    },
-    {
       "id": "7956",
       "text": "Set scholar application",
       "day": "Thu 9:00",
       "reminder": true
+    },
+    {
+      "id": "2d6f",
+      "text": "Check tablet app",
+      "day": "Thursday",
+      "reminder": false
+    },
+    {
+      "id": "514c",
+      "text": "Eval App",
+      "day": "Monday afternoon",
+      "reminder": false
+    },
+    {
+      "id": "375f",
+      "text": "Read tablet docs",
+      "day": "Wendnesday",
+      "reminder": false
     }
   ]
 }
